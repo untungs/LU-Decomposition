@@ -121,6 +121,7 @@ function bwSubstitute(lu_matrix, d) {
 function parse() {
   var a = getMatrixA();
   var b = getVectorB();
+  document.querySelector('#output').innerHTML += "<br />[A]{X} = {B}";
   printEq(a, b);
 
   var lu = decompose(a);
@@ -148,6 +149,9 @@ function printEq(a, b) {
       table += "<td>" + a[i][j] + "</td>";
     }
     table += "<td>x<sub>" + (i+1) + "</sub></td>";
+    table += "<td>";
+    table += (i == 1) ? "=" : " ";
+    table += "</td>";
     table += "<td>" + b[i] + "</td>";
     table += "</tr>";
   }
@@ -165,7 +169,7 @@ function printMatrix(a) {
     table += "</tr>";
   }
   table += "</table>";
-  document.querySelector('#output').innerHTML += "<br /><br />" + table;
+  document.querySelector('#output').innerHTML += "<br />" + table;
 }
 
 function printVector(v) {
