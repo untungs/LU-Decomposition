@@ -156,10 +156,11 @@ function printEq(a, b) {
 }
 
 function printVector(v) {
-  var out = "";
-  for (var i = 1; i < v.length; i++) {
-    out += v[i] + "<br />";
+  var out = "Hasil: ";
+  for (var i = 0; i < v.length; i++) {
+    out += "<br />" + v[i];
   }
+  
   document.querySelector('#output').innerHTML += "<br />" + out;
 }
 
