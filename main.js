@@ -120,18 +120,19 @@ function bwSubstitute(lu_matrix, d) {
 
 function parse() {
   var a = getMatrixA();
-  console.log("a", a);
   var b = getVectorB();
-  console.log("b", b);
   printEq(a, b);
 
   var lu = decompose(a);
-  console.log("lu", lu);
+  document.querySelector('#output').innerHTML += "<br />Matriks LU:";
+  printMatrix(lu);
+  
   var d = fwSubstitute(lu, b);
   console.log("d", d);
   var x = bwSubstitute(lu, d);
   console.log("x", x);
   
+  document.querySelector('#output').innerHTML += "<br />Vektor {X}:";
   printVector(x);
   
   /*var eq = document.querySelector('input').value;
@@ -151,12 +152,24 @@ function printEq(a, b) {
     table += "</tr>";
   }
   table += "</table>";
-  console.log(table);
+  document.querySelector('#output').innerHTML += "<br /><br />" + table;
+}
+
+function printMatrix(a) {
+  var table = "<table>";
+  for (var i = 0; i < a.length; i++) {
+    table += "<tr>";
+    for (var j = 0; j < a[i].length; j++) {
+      table += "<td>" + a[i][j] + "</td>";
+    }
+    table += "</tr>";
+  }
+  table += "</table>";
   document.querySelector('#output').innerHTML += "<br /><br />" + table;
 }
 
 function printVector(v) {
-  var out = "Hasil: ";
+  var out = "";
   for (var i = 0; i < v.length; i++) {
     out += "<br />" + v[i];
   }
