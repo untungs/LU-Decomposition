@@ -123,7 +123,7 @@ function check() {
   
   var a = getMatrixA();
   var b = getVectorB();
-  output.innerHTML += "<div>[A]{X} = {B}<br />;
+  output.innerHTML += "<div>[A]{X} = {B}<br />";
   printEq(a, b);
   output.innerHTML += "</div>";
 
