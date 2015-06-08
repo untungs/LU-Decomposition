@@ -19,7 +19,6 @@ function getCoeffient(eq) {
   //eq = eq.replace(/x(?=[^0-9])$/g, 'x\+');
   
   eq = eq.replace(/x/g, '');
-  console.log(eq);
 
   // simpan array coef yang dipisahkan dengan x
   // coef = ["-1", "-6", "1"]
@@ -138,6 +137,7 @@ function check() {
   output.innerHTML += "</div>";
   
   var x = bwSubstitute(lu, d);
+  console.log(x);
   output.innerHTML += "<div/>[U]{X} = {D}<br />Vektor {X}:<br />";
   printVector(x, "x");
   output.innerHTML += "</div>";
