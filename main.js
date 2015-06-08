@@ -127,7 +127,7 @@ function parse() {
   var lu = decompose(a);
   var d = fwSubstitute(lu, b);
   var x = bwSubstitute(lu, d);
-  
+  document.querySelector('#output').innerHTML += x;
   printVector(x);
   
   console.log(lu);
