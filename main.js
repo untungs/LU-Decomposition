@@ -181,7 +181,7 @@ function printMatrix(a) {
 function printVector(v, c) {
   var out = "";
   for (var i = 0; i < v.length; i++) {
-    out += "<br />" + c + "<sub>" + (i+1) + "</sub> = " + v[i];
+    out += c + "<sub>" + (i+1) + "</sub> = " + v[i] + "<br />";
   }
   
   document.querySelector('#output').innerHTML += out;
