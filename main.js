@@ -120,19 +120,20 @@ function bwSubstitute(lu_matrix, d) {
 
 function parse() {
   var a = getMatrixA();
+  console.log("a", a);
   var b = getVectorB();
-
+  console.log("b", b);
   printEq(a, b);
 
   var lu = decompose(a);
+  console.log("lu", lu);
   var d = fwSubstitute(lu, b);
+  console.log("d", d);
   var x = bwSubstitute(lu, d);
-  document.querySelector('#output').innerHTML += x;
+  console.log("x", x);
+  
   printVector(x);
   
-  console.log(lu);
-  console.log(b);
-  console.log(d);
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
   document.querySelector('output').innerHTML = txt;*/
