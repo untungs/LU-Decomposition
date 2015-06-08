@@ -118,23 +118,29 @@ function bwSubstitute(lu_matrix, d) {
   return x;
 }
 
-function parse() {
+function check() {
+  var output = document.querySelector('#output');
+  
   var a = getMatrixA();
   var b = getVectorB();
-  document.querySelector('#output').innerHTML += "<br />[A]{X} = {B}";
+  output.innerHTML += "<div>[A]{X} = {B}<br />;
   printEq(a, b);
+  output.innerHTML += "</div>";
 
   var lu = decompose(a);
-  document.querySelector('#output').innerHTML += "<br />Matriks LU:";
+  output.innerHTML += "<div>Matriks LU:<br />";
   printMatrix(lu);
+  output.innerHTML += "</div>";
   
   var d = fwSubstitute(lu, b);
-  document.querySelector('#output').innerHTML += "<br />Vektor {D}:";
+  output.innerHTML += "<div>[L]{D} = {B}<br />Vektor {D}:<br />";
   printVector(d, "d");
+  output.innerHTML += "</div>";
   
   var x = bwSubstitute(lu, d);
-  document.querySelector('#output').innerHTML += "<br />Vektor {X}:";
+  output.innerHTML += "<div/>[U]{X} = {D}<br />Vektor {X}:<br />";
   printVector(x, "x");
+  output.innerHTML += "</div>";
   
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
@@ -156,7 +162,7 @@ function printEq(a, b) {
     table += "</tr>";
   }
   table += "</table>";
-  document.querySelector('#output').innerHTML += "<br />" + table;
+  document.querySelector('#output').innerHTML += table;
 }
 
 function printMatrix(a) {
@@ -169,13 +175,13 @@ function printMatrix(a) {
     table += "</tr>";
   }
   table += "</table>";
-  document.querySelector('#output').innerHTML += "<br />" + table;
+  document.querySelector('#output').innerHTML += table;
 }
 
 function printVector(v, c) {
   var out = "";
   for (var i = 0; i < v.length; i++) {
-    out += "<br />c<sub>" + (i+1) + "</sub> = " + v[i];
+    out += "<br />" + c + "<sub>" + (i+1) + "</sub> = " + v[i];
   }
   
   document.querySelector('#output').innerHTML += out;
