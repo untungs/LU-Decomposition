@@ -119,24 +119,36 @@ function bwSubstitute(lu_matrix, d) {
 }
 
 function parse() {
-  // var m = getMatrixA();
   var a = getMatrixA();
-  // console.log(m);
-  var lu = decompose(a);
   var b = getVectorB();
+
+  printEq(a, b);
+
+  var lu = decompose(a);
   var d = fwSubstitute(lu, b);
   console.log(lu);
   console.log(b);
   console.log(d);
   console.log(bwSubstitute(lu, d));
-  document.querySelector('output').innerHTML = d;
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
   document.querySelector('output').innerHTML = txt;*/
 }
 
-function strip(number) {
-    return (parseFloat(number.toPrecision(12)));
+function printEq(a, b) {
+  var table = "<table>";
+  for (var i = 0; i < a.length; i++) {
+    table += "<tr>";
+    for (var j = 0; j < a[i].length; j++) {
+      table += "<td>" + a[i][j] + "</td>";
+    }
+    table += "<td>x<sub>" + (i+1) + "</sub></td>";
+    table += "<td>" + b[i] + "</td>";
+    table += "</tr>";
+  }
+  table += "</table>";
+  console.log(table);
+  document.querySelector('#output').innerHTML = table;
 }
 
 /*// misal x - x - 6x = -26
