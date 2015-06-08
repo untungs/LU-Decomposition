@@ -126,14 +126,13 @@ function parse() {
 
   var lu = decompose(a);
   var d = fwSubstitute(lu, b);
-  var x = bwSubstitute(lu, d)
+  var x = bwSubstitute(lu, d);
   
-  printVector(d);
+  printVector(x);
   
   console.log(lu);
   console.log(b);
   console.log(d);
-  console.log();
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
   document.querySelector('output').innerHTML = txt;*/
@@ -158,7 +157,7 @@ function printEq(a, b) {
 function printVector(v) {
   var out = "";
   for (int i = 1; i < v.length; i++) {
-    out += v[i] + <br />
+    out += v[i] + "<br />";
   }
   document.querySelector('#output').innerHTML += "<br />" + out;
 }
