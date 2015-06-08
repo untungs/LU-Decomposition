@@ -1,0 +1,7 @@
+table {
+  border-left: 1px #999 solid;
+}
+
+td:nth-child(3) {
+  border-right: 1px #999 solid;
+}
