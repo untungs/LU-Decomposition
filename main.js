@@ -126,10 +126,14 @@ function parse() {
 
   var lu = decompose(a);
   var d = fwSubstitute(lu, b);
+  var x = bwSubstitute(lu, d)
+  
+  printVector(d);
+  
   console.log(lu);
   console.log(b);
   console.log(d);
-  console.log(bwSubstitute(lu, d));
+  console.log();
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
   document.querySelector('output').innerHTML = txt;*/
@@ -148,7 +152,15 @@ function printEq(a, b) {
   }
   table += "</table>";
   console.log(table);
-  document.querySelector('#output').innerHTML = table;
+  document.querySelector('#output').innerHTML += "<br /><br />" + table;
+}
+
+function printVector(v) {
+  var out = "";
+  for (int i = 1; i < v.length; i++) {
+    out += v[i] + <br />
+  }
+  document.querySelector('#output').innerHTML += "<br />" + out;
 }
 
 /*// misal x - x - 6x = -26
