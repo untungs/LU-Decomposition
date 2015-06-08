@@ -129,12 +129,12 @@ function parse() {
   printMatrix(lu);
   
   var d = fwSubstitute(lu, b);
-  console.log("d", d);
-  var x = bwSubstitute(lu, d);
-  console.log("x", x);
+  document.querySelector('#output').innerHTML += "<br />Vektor {D}:";
+  printVector(d, "d");
   
+  var x = bwSubstitute(lu, d);
   document.querySelector('#output').innerHTML += "<br />Vektor {X}:";
-  printVector(x);
+  printVector(x, "x");
   
   /*var eq = document.querySelector('input').value;
   var txt = getCoeffient(eq) + '<br />' + getConstant(eq);
@@ -156,7 +156,7 @@ function printEq(a, b) {
     table += "</tr>";
   }
   table += "</table>";
-  document.querySelector('#output').innerHTML += "<br /><br />" + table;
+  document.querySelector('#output').innerHTML += "<br />" + table;
 }
 
 function printMatrix(a) {
@@ -172,13 +172,13 @@ function printMatrix(a) {
   document.querySelector('#output').innerHTML += "<br />" + table;
 }
 
-function printVector(v) {
+function printVector(v, c) {
   var out = "";
   for (var i = 0; i < v.length; i++) {
-    out += "<br />" + v[i];
+    out += "<br />c<sub>" + (i+1) + "</sub> = " + v[i];
   }
   
-  document.querySelector('#output').innerHTML += "<br />" + out;
+  document.querySelector('#output').innerHTML += out;
 }
 
 /*// misal x - x - 6x = -26
