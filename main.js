@@ -156,7 +156,7 @@ function printEq(a, b) {
 
 function printVector(v) {
   var out = "";
-  for (int i = 1; i < v.length; i++) {
+  for (var i = 1; i < v.length; i++) {
     out += v[i] + "<br />";
   }
   document.querySelector('#output').innerHTML += "<br />" + out;
