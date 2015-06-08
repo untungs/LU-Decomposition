@@ -1,7 +1,12 @@
-table {
+td {
+  padding: 0 5px;
+}
+
+td:nth-child(1) {
   border-left: 1px #999 solid;
 }
 
 td:nth-child(3) {
   border-right: 1px #999 solid;
+  margin-right: 10px;
 }
